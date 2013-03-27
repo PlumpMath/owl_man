@@ -1,0 +1,75 @@
+@import "app";
+
+/***********
+* colors
+************/
+
+$off_black: #4A4A4A;
+$manila: #F5EDD3;
+
+/***********
+* variables
+************/
+
+/* breadcrumbs */
+$crumb-bg: $manila;
+$crumb-border-size: 0px;
+$crumb-padding: 0px;
+
+/***********
+* main styling
+************/
+
+body {
+  background: $manila;
+}
+
+/************
+* scaffolding
+*************/
+
+section.main {
+  @include grid-row;
+  @include grid-column(12);
+}
+
+/* header */
+
+header {
+  @include grid-row;
+  @include grid-column(12);
+  text-align: center;
+  text-transform: uppercase;
+
+  hr {
+    border-color: black;
+    border-width: 5px;
+  }
+}
+
+/* contents */
+
+ul.toc {
+  @include crumb-container;
+  display: inline-block;
+  text-align: center;
+
+  > li {
+    @include crumbs;
+
+    &:first-child:before {
+      content: " ";
+    }
+  }
+}
+
+/* title page */
+
+a.title {
+  @include grid-column(10);
+
+  figure.title {
+    width: 100%;
+    background: url(../images/owl.png);
+  }
+}
