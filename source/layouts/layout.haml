@@ -24,10 +24,15 @@
   %body{:class => page_classes}
     %header
       %h1 Owl, Field Manual FH310.45/h
-      %h2 Care, Training, and Employment
       %hr
 
     %section{:role => "main", :class => "main"}= yield
     %footer
+      %p.footer 
+        &rarr;
+        %a(href="http://polyrhythm.github.com")
+          polyrhythm
+          
+
     -# Application Javascript, safe to override
     = javascript_include_tag "app"

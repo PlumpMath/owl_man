@@ -6,6 +6,7 @@
 
 $off_black: #4A4A4A;
 $manila: #F5EDD3;
+$grey: #999;
 
 /***********
 * variables
@@ -15,6 +16,9 @@ $manila: #F5EDD3;
 $crumb-bg: $manila;
 $crumb-border-size: 0px;
 $crumb-padding: 0px;
+$crumb-font-color: $off_black;
+$crumb-font-color-current: $grey;
+$crumb-link-decor: underline;
 
 /***********
 * main styling
@@ -29,6 +33,11 @@ body {
 *************/
 
 section.main {
+  @include grid-row;
+  @include grid-column(12);
+}
+
+footer {
   @include grid-row;
   @include grid-column(12);
 }
@@ -50,7 +59,6 @@ header {
 /* contents */
 
 ul.toc {
-  @include grid-row(nest);
   @include grid-column(12);
   @include crumb-container;
   display: inline-block;
@@ -73,13 +81,32 @@ ul.toc {
 /* title page */
 
 a.title {
-  @include grid-row(nest);
   @include grid-column(12);
   height: auto;
   display: inline-block;
   cursor: pointer;
+  margin: 20px 0;
 
   > img {
     margin: 0 auto;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top:50px;
+  text-align: right;
+  
+  a {
+    color: black;
+    cursor: pointer;
+    font-size: 0.75em;
+
+    &:hover {
+      color: darken(pink, 20%);
+      @include transition-property(color);
+      @include transition-duration(0.2s);
+    }
   }
 }
