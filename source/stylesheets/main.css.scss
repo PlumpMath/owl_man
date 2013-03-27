@@ -50,15 +50,22 @@ header {
 /* contents */
 
 ul.toc {
+  @include grid-row(nest);
+  @include grid-column(12);
   @include crumb-container;
   display: inline-block;
   text-align: center;
 
-  > li {
-    @include crumbs;
+  .table {
+    display: table;
+    margin: 0 auto;
 
-    &:first-child:before {
-      content: " ";
+    > li {
+      @include crumbs;
+
+      &:first-child:before {
+        content: " ";
+      }
     }
   }
 }
@@ -66,10 +73,13 @@ ul.toc {
 /* title page */
 
 a.title {
-  @include grid-column(10);
+  @include grid-row(nest);
+  @include grid-column(12);
+  height: auto;
+  display: inline-block;
+  cursor: pointer;
 
-  figure.title {
-    width: 100%;
-    background: url(../images/owl.png);
+  > img {
+    margin: 0 auto;
   }
 }
