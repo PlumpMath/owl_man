@@ -21,6 +21,22 @@ $crumb-font-color-current: $grey;
 $crumb-link-decor: underline;
 
 /***********
+* typo
+************/
+
+h1, h2, p, a {
+  color: $off_black;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+var {
+  background: $off_black;
+}
+
+/***********
 * main styling
 ************/
 
@@ -42,18 +58,26 @@ footer {
   @include grid-column(12);
 }
 
+.break {
+  @include grid-column(12);
+  height: 100px;
+}
+
 /* header */
 
 header {
   @include grid-row;
   @include grid-column(12);
   text-align: center;
-  text-transform: uppercase;
 
   hr {
-    border-color: black;
+    border-color: $off_black;
     border-width: 5px;
   }
+}
+
+.content {
+  @include grid-column(12);
 }
 
 /* contents */
