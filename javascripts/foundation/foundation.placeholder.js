@@ -1,6 +1,7 @@
 /*! http://mths.be/placeholder v2.0.7 by @mathias 
 	Modified to work with Zepto.js by ZURB
 */
+
 ;(function(window, document, $) {
 
 	var isInputSupported = 'placeholder' in document.createElement('input'),
