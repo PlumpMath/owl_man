@@ -24,8 +24,12 @@ $crumb-link-decor: underline;
 * typo
 ************/
 
-h1, h2, p, a {
+h1, h2, p, a, figcaption {
   color: $off_black;
+}
+
+p {
+  text-align: left;
 }
 
 h1, h2 {
@@ -36,12 +40,31 @@ var {
   background: $off_black;
 }
 
+figcaption {
+  font-size: emCalc(11px);
+  text-align: center;
+  max-width: 200px;
+}
+
 /***********
 * main styling
 ************/
 
 body {
   background: $manila;
+}
+
+figure {
+  display: inline-block;
+  margin-bottom: 20px;
+  
+  > img {
+    max-width: 100%;
+  }
+}
+
+strong {
+  font-weight: bold;
 }
 
 /************
@@ -51,6 +74,10 @@ body {
 section.main {
   @include grid-row;
   @include grid-column(12);
+
+  > div {
+    text-align: center;
+  }
 }
 
 footer {
